@@ -1,15 +1,20 @@
-$color: #DB4437; 
+/* Class properties son las propiedades que se le dan a los elementos */
+/* Variable */
+$color: #DB4437;
 
+/* Class selector */
 * {
   box-sizing: border-box;
 }
 
+/* Class selector */
 .row::after {
   content: "";
   clear: both;
   display: block;
 }
 
+/* Class selector */
 [class*="col-"] {
   float: left;
   padding: 15px;
@@ -19,7 +24,7 @@ html {
   font-family: Product Sans, sans-serif;
 }
 
-
+/* #id */
 #earth {
   font-style: bold;
   background-color: #4285F4;
@@ -41,9 +46,11 @@ html {
   box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
 }
 
+/* Class Selectors */
 .menu li:hover {
   background-color: #F4B400;
 }
+
 
 .aside {
   background-color: $color;
@@ -62,6 +69,7 @@ html {
   padding: 15px;
 }
 
+/* List unordered */
 td {
   text-align: center;
   padding-right: 50px;
@@ -81,9 +89,37 @@ td {
 .col-11 {width: 91.66%;}
 .col-12 {width: 100%;}
 
+/*One mobile-responsive @media query*/
 @media (max-width: 768px) {
   /* For mobile phones: */
   [class*="col-"] {
     width: 100%;
   }
 }
+
+/* Nesting */
+div {
+
+    p {
+        font-size: 12px;
+    }
+    tr {
+        font-size: 12px;
+    }
+
+  }
+
+/* Inheritance */
+  %message {
+      font-family: sans-serif;
+      font-size: 18px;
+      font-weight: bold;
+      border: 1px solid black;
+      padding: 20px;
+      margin: 20px;
+  }
+
+  .success {
+      @extend %message;
+      background-color: green;
+  }
